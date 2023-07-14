@@ -1,0 +1,83 @@
+---
+title: "A Simplistic Approach to React.js State Management"
+description: "Global state should be easy to implement and use so that you aren't afraid to actually use it."
+pubDate: "Jun 16 2023"
+heroImage: "/post_img.webp"
+---
+
+_This article was originally posted on Medium where it reached a whopping 49 people. I have since revised it and posted it here so that it can be read without a Medium subscription._
+
+State-management is a hot-button topic of conversation in the front-end development world, but here’s my 2 cents: Stop making application state so complicated.
+
+## Read this: State management is the process of systemizing your application data.
+Wait, it’s not a library? It’s not a master’s degree? It’s not 80+ pages of documentation? Nope. State management should accomplish two things:
+
+- Store information that is generalized over the entire application and specific components/modules of the application.
+- Quick and easy to use, so it is actually used correctly.
+
+**A friendly reminder:** Your application is ALWAYS a specific combination of state, it wouldn’t show up on your computer if it wasn’t.
+
+## My approach to application state management design
+First, are you actually experiencing a pain-point caused by not having proper state management?
+
+**If not**, then revisit this when you do have that pain-point.
+
+**If yes**, start by answering these two questions in a very **raw and unrefined way**:
+
+_If I was trying to represent this web application/feature as a single serializable JSON object, what would it look like?_
+
+_What information would it contain?_
+
+**Then, once you have these questions answered, you can think about how to actually use a state-management library to solve your problem.**
+
+
+## React Developers: You need a state management library
+I see it all the time “Just use the context api!” “Just use state and prop-drill components!” “Redux is dead, just use Apollo/React Query!”. I think this is bad advice, and you do need a state management library. Why do I say this? Because **I tried to implement a React app only relying on Apollo client, and it was an architectural disaster.**
+
+Your users expect a fast experience on web applications. They want a user interaction that is as close to a native app as possible. If your *only* solution to state is Apollo client and the caching system it provides, *good luck*. Apollo (along with GraphQL codegen) is *fantastic*! However, it is not a front-end state library.
+
+### Here's why
+In the React world, state management often feels like a complex web of interworking pieces that ends up being a job in itself. Just remember, each system, no matter how complicated, is composed of smaller pieces that will make more sense. You need a state management system that allows you to **build both the small pieces and the larger pieces** in order to execute a great system.
+
+Apollo, in my experience, is great for GraphQL API communication, but it does NOT give you *easy* flexibility to work with and manipulate data in such a way that it is composable into a bunch of small pieces. You have the big pieces, what is loaded from the server, but it requires some effort to build the smaller pieces around it. If your application really does just load data, and does not have a bunch of iteraction, Apollo will probably work fine.
+
+A successful application needs to have a bit more help, and a way to preserve **consistent** data between different component trees.
+
+Prop-drilling and component state can, by design, never become a decoupled application architecture implementation. Each child component is reliant on the parent component that passed its props.
+
+
+## The state-management library you choose likely doesn't matter
+If you are facing constant roadblocks in your React.js development regarding state management and you often switch one solution out for another, maybe it’s time to just pick one. They all essentially do the same thing once you break them down, but with slightly different approaches.
+
+I think you should pick the state library that interoperates well with your current codebase, and if it takes more than about 10 minutes to implement application state with your library, you should probably consider switching.
+
+
+### The state-management system I use
+I personally use Valtio in my projects. It is extremely simple and easy to use, and it can compose systems as complicated as I would like it to. If you want to change the React state, simply just change it on the Proxy object (plain JS object), and observe it with snapshots. I keep the proxies as SMALL as possible. Normally no more than 5 plain variables.
+
+**Need computed values? Need to have a more complex system?** Simply keep building proxies and custom React Hooks to chain the different proxies together.
+
+Much like how you can use Flexbox for pretty much all layouts, you can do all things through useEffect, useSnapshot, and Valtio proxy objects.
+
+
+## React State Management: An Opinionated but Pragmatic Approach
+Here is my framework for implementing state in my own React apps. This is not the RIGHT way. This is simply a developer’s opinion on the most managable approach for react state management:
+
+### Start with standard React
+Whenever starting to build a new application, start raw, with the most simple and react-ish way to build something. I would advise skipping the React Context API unless you have a small tree of components all relying on the same data. Just use props, Apollo, and state at first.
+
+### Make your app's functionality with custom hooks
+Custom React hooks are worth their weight in gold. Learn to write and use them for better code quality. You can create generic and specific ones, just functionality out of the display components, they are supposed to look pretty, not calculate mortgages.
+
+When all functionality is in custom hooks, you can maintain the code much better, because you hopefully named the hooks well for thier very small and composable purposes.
+
+### Did you discover a case where hooks need to talk to each other?
+So you’ve followed the rules above, setup your app with custom hooks, but now you’ve found out that your hooks really should talk to each other, as they need to be on the same page with each other.
+
+This is when your React State Management enters. I normally create a Valtio proxy for the two hooks to share, and they can update the proxy as necessary. Use the useEffect hook to act upon changed data from the proxies (snapshots in Valtio).
+
+### The useEffect hook between custom hooks and proxies helps to keep state reactive
+You can create any network of data transmission between hooks and proxies. Simply update another Proxy from within the useEffect hook, and then the custom hooks consuming that proxy’s snapshot will react and do what they need to do.
+
+**With this, you have a simple framework that is composable for more complex systems, logically defined (and named) state transitions, and easy to implement.** I find that it takes less than 2 minutes for building small pieces of application state, and I rarely ever have to refactor using this framework because it is using a needs-first framework.
+
