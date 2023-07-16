@@ -3,6 +3,7 @@ title: "It’s important to control your SaaS stack"
 description: "When you aren't in control of the technologies in your early-stage startup, you are forced into paying more for a solution that doesn't fit your needs."
 pubDate: "Jun 17 2021"
 heroImage: "/post_img.webp"
+tags: ["startup", "saas", "development", "business"]
 ---
 
 _This article was originally posted on Medium where it was published to multiple tech journals. I have since revised it and posted it here so that it can be read without a Medium subscription._

@@ -5,47 +5,49 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
 <BaseLayout title = "Projects" sideBarActiveItemID="projects">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5">Current Projects</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
+    title="GoalSumo.com"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    desc="GoalSumo is my pride and joy. I'm cofounding GoalSumo.com with award-winning author MJ DeMarco. GoalSumo is a new productivity and goal setting tool designed for industry professionals and entrepreneurs to help visualize and strategize their dream lives."
+    url="https://goalsumo.com"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="The Backstage"
+    img="/backstage.png"
+    desc="The Backstage is a weekly email membership where I share the trials and tribulations of building a software business as a technical co-founder. I've made a lot of mistakes along the way, and I share them so that you don't have to make the same ones."
+    url="https://the-backstage-pass.ck.page/cc1d85e369"
+    badge="100% Free!"
   />
+  <div class="divider my-0"></div>
+  <div class="text-center text-xs italic text-gray-500">
+    <p>There's another project in the works coming soon, but we're not ready to share the details of this project just yet!</p>
+  </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Previous Involvement</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+      title="Decision Revision"
+      img="/post_img.webp"
+      desc="Decision Revision was a web and mobile app available for iOS and Android devices. I discontinued development on Decision Revision to focus on GoalSumo.com full time about 2 years ago. It was an app designed to be the easiest WADM (Weighted Average Decision Matrix) decision making framework tool."
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 4"
+    title="Flippum Mobile"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="In partnership with my friend Turner Eison, I contributed to the design and development of the mobile app Flippum. This app started as a Flippa aquisition, and led to a complete rewrite of the app. Development of Flippum is discontinued, but the app is still available on the App Store."
+    url="https://apps.apple.com/us/app/flippum/id1421559360"
   />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 5"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
+  <!--<div class="divider my-0"></div>-->
+  <!--<HorizontalCard-->
+  <!--  title="Demo Project 5"-->
+  <!--  img="/post_img.webp"-->
+  <!--  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."-->
+  <!--  url="#"-->
+  <!--/>-->
 </BaseLayout>

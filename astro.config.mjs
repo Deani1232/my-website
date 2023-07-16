@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
+import "./src/util/StringCapitalize.js";
 
 // https://astro.build/config
 import image from "@astrojs/image";

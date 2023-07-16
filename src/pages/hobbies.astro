@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+---
+
+<BaseLayout title="Projects" sideBarActiveItemID="services">
+  <div>
+    <div class="text-3xl w-full font-bold mb-5">Hobbies and Interests</div>
+  </div>
+
+  <HorizontalCard
+    title="Board Gamer"
+    img="/board-game.png"
+    desc="While I'm known for creating and changing board game rules, I do love board games! My three favorites are Power Grid, Monopoly and Catan. My friends and family all play board games together."
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Movie Watcher"
+    img="/movie.png"
+    desc="I'm a fan of movies, more so than television. I really enjoy a good biopic. Some of my favorites are: The Great Gatsby, The Aviator, Airplane, and Birdemic 2. I'm always looking for new recommendations (Tweet me!)."
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+      title="City Builder"
+      img="/skyline.png"
+      desc="I love building cities in Cities: Skylines and Minecraft. I have a few Minecraft worlds that I worked on for years. When I was younger, before city building games were accessible to me, I would sit down and draw out my cities and buildings on paper and lay everything out with sticky notes."
+  />
+  <!--<div class="divider my-0"></div>-->
+  <!--<HorizontalCard-->
+  <!--  title="Service 4"-->
+  <!--  img="/post_img.webp"-->
+  <!--  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."-->
+  <!--/>-->
+</BaseLayout>

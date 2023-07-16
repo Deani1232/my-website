@@ -26,10 +26,14 @@ import { Image } from "@astrojs/image/components";
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
         <p class="py-1 text-1xl">{desc}</p>
-        <div class="card-actions justify-end">
+        {
+            tags &&
+            <div class="h-1.5"/>
+        }
+        <div class="card-actions justify-start">
           {
             tags &&
-              tags.map((tag) => <div class="badge badge-outline">{tag}</div>)
+              tags.slice(0,4).map((tag) => <div class="badge badge-outline">{tag.capitalize()}</div>)
           }
         </div>
       </div>
