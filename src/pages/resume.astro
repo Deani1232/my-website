@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Full-Stack Software Engineer with over 5 years of dynamic experience in web and application development. Proven expertise in transforming business processes through software solutions for both startups and established organizations. Committed to leveraging technical expertise to deliver high-ROI results.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Founder and Software Engineer"
+      subtitle="From 2022 to Present at Digital Reactive LLC"
+    >
+      <ul class="list-disc mx-5 mb-6">
+        <li><strong class="italic">Successful startup experience</strong></li>
+        <li>Executed zero-to-one technical aspects of GoalSumo.com. There is a free trial available for a sample of the application</li>
+        <li>Collected UI/UX feedback and implemented improvements for the development roadmap</li>
+        <li>Designed and implemented multiple architectural improvements over GraphQL, NestJS, and NextJS</li>
+        <li>Modeled and implemented a database layer for the application using PostgreSQL</li>
+        <li>Created front-end state management patterns with MobX and React</li>
+        <li>Implemented external authentication services and subscription services such as Firebase Auth</li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Technical Consultant and Web Developer"
+      subtitle="From November 2018 to November 2021 at Acasa Consulting LLC, Atlanta, GA"
+    >
+      <ul class="list-disc mx-5 mb-6">
+        <li>Provided low-cost high-ROI website development services to local and international clients.</li>
+        <li>Implemented websites using WordPress, Ruby on Rails, HTML, CSS, and JavaScript for streamlined website development</li>
+        <li>Integrated marketing campaign software within business websites</li>
+        <li>Maintained great client relationships with a 92% client return rate</li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Full-Stack Web Developer"
+      subtitle="From January 2018 to March 2019 at LabEd"
+    >
+      <ul class="list-disc mx-5 mb-6">
+        <li>Designed, implemented, and maintained a PostgreSQL database for the web application based on client needs</li>
+        <li>Used Ruby on Rails, HTML, CSS, JavaScript, jQuery and AJAX to create user-friendly web pages</li>
+        <li>Provided deployment guidance onto HIPAA compliant servers using Docker to meet compliance standards using Google Cloud Platform</li>
+      </ul>
+    </TimeLineElement>
+
+    <TimeLineElement
+        title="Ruby on Rails Developer"
+        subtitle="From January 2018 to March 2019 at Signature Aerospace, Atlanta, GA"
+    >
+      <ul class="list-disc mx-5 mb-6">
+        <li>Visited company on-site to evaluate where business processes could be automated</li>
+        <li>Communicated with the client to develop a software solution that reduced employee labor and streamlined business operations</li>
+        <li>Used Ruby on Rails, HTML, CSS, JavaScript, jQuery and AJAX to create user-friendly web pages.</li>
+        <li>Created dynamic webpages using ERB templating language with HTML, CSS, and Javascript</li>
+      </ul>
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="mb-10">
+    <h3 class="font-semibold">Bachelor of Science (B.S.) in Software Engineering</h3>
+    <span class="font-light text-sm">August 2019 to December 2023 at Kennesaw State University, Kennesaw GA</span>
+  </div>
+
+  <!--<div class="mb-5">-->
+  <!--  <div class="text-3xl w-full font-bold">Certifications</div>-->
+  <!--</div>-->
+
+  <!--<ul class="list-disc mx-6 mb-10 grid gap-2">-->
+  <!--  <li>-->
+  <!--    <a href="#" target="_blank"> Certification Name (with link)</a>-->
+  <!--  </li>-->
+  <!--  <li>-->
+  <!--    <a href="#" target="_blank"> Certification Name (with link)</a>-->
+  <!--  </li>-->
+  <!--</ul>-->
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-4 columns-2 mx-6">
+    <li>Model-View-Controller</li>
+    <li>HTML/CSS/Javascript</li>
+    <li>Typescript</li>
+    <li>NestJS</li>
+    <li>Mikro-ORM</li>
+    <li>Node.js</li>
+    <li>React / Next</li>
+    <li>SQL / PostgreSQL</li>
+    <li>MobX</li>
+    <li>Client Communications</li>
+    <li>Database Design</li>
+  </ul>
+</BaseLayout>
